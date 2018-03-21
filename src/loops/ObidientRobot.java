@@ -1,5 +1,7 @@
 package loops;
 
+import javax.swing.JOptionPane;
+
 import org.jointheleague.graphical.robot.Robot;
 
 public class ObidientRobot {
@@ -8,25 +10,17 @@ public static void main(String[] args) {
 	Muda.setSpeed(20);
 	Muda.penDown();
 	
+	String shape=JOptionPane.showInputDialog("What shape do you want to make?");
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	if(shape.equals("square")) {
+	square();
+	}
+	if(shape.equals("triangle")) {
+		triangle();
+		}
+	if(shape.equals("circle")) {
+		circle();
+		}
 	
 	
 }
@@ -37,13 +31,19 @@ public static void main(String[] args) {
 		}
 	}
 public static void triangle() {	
+	Muda.setAngle(-90);
 	for (int i = 0; i < 3; i++) {
-	
+		Muda.turn(360/3);
 	Muda.move(100);
-	Muda.turn(180/3);
+	
 	}
 }
-	
+	public static void circle() {
+		for (int i = 0; i < 360; i++) {
+			Muda.move(1);
+			Muda.turn(360/360);
+		}
+	}
 	
 	
 	
